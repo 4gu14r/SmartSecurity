@@ -1,0 +1,91 @@
+
+.modal{
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: rgba(0,0,0,.8);
+    position: fixed;
+    display: none;
+
+}
+.modal:target{
+}
+.modal:target{
+    display: block;
+}
+.modal:target ~ .modal-dialog{
+    top: 150px;
+    transition: all .3s;
+    transition-delay: 0.2;
+}
+.modal-dialog{
+    width: 720px;
+    height: 405px;
+    position: fixed;
+    margin-left: 0px;
+    left: 0%;
+    top: -410px;
+    background-color: white;
+
+}
+.modal-dialog .modal-content{
+    width: 100%;
+    position: absolute;
+}
+.modal-dialog{
+    color: black;
+    font-family: arial;
+    text-decoration: none;
+    font-size: 35px;
+    position: absolute;
+    background-color: black;
+    width: 40px;
+    height: 40px;
+    text-align: center;
+    top: 0;
+    right: 0;
+}
+#close:hover{
+    opacity: .5;
+}
+
+/* Modal Header */
+.modal-header {
+    padding: 2px 16px;
+    background-color: #002752;
+    color: white;
+}
+
+/* Modal Body */
+.modal-body {padding: 2px 20px;margin: 0 75px;}
+
+/* Modal Footer */
+div.modal-footer {
+    text-align: left;
+    padding: 2px 16px;
+    background-color: #002752;
+    color: white;
+    bottom: 0;
+    position: absolute;
+    width: 100%;
+}
+
+/* Modal Content */
+.modal-content {
+    position: relative;
+    background-color: #fefefe;
+    margin: auto;
+    padding: 0;
+    border: 1px solid #888;
+    width: 100%;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+    animation-name: animatetop;
+    animation-duration: 0.4s
+}
+
+/* Add Animation */
+@keyframes animatetop {
+    from {top: -300px; opacity: 0}
+    to {top: 0; opacity: 1}
+}

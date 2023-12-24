@@ -1,0 +1,94 @@
+div.menu{
+    position: fixed;
+}
+*{
+    padding: 0;
+    margin: 0;
+}
+a{
+    text-decoration: none;
+    color: black;
+}
+body{
+    font-family: arial;
+}
+
+ul{
+    list-style: none;
+    background: rgb(16,16,16);
+    margin-top: -15vh;
+    padding-top: 15vh;
+    padding-bottom: 20vh;
+}
+div.imagem-menu img{
+    display: block;
+    float: left;
+    width: 40px;
+    
+}
+input#chec[type="checkbox"]{
+    display: none;
+}
+nav{
+    background: rgb(16,16,16);
+    width: 350px;
+    height: 100%;
+    left: -350px;
+    top: -100px;
+    position: absolute;
+    transition: all .5s;
+}
+
+input#chec[type="checkbox"]:checked ~ nav{
+     transform: translateX(350px);
+}
+ul{
+    position: absolute;
+    top: 70px;
+    width: 100%;
+}
+ul a{
+    display: block;
+    padding: 20px 5px;
+    color: white;
+}
+a:hover{
+    background-color: rgba(176,224,230,.5);
+    color: black;
+}
+
+nav ul li ul#submenu{
+    margin-top: 14vh;
+    display: none;
+    padding: 0;
+}
+nav ul li:hover ul#submenu{
+    display: block;
+}
+
+nav ul li:hover ul#submenu li{
+    background-color: #333;
+}
+nav ul li:hover ul#submenu li a{
+    color: white;
+}
+nav ul li:hover ul#submenu li a:hover{
+    background: rgb(176,250,230);
+    color: black;
+}
+
+label{
+    padding: 15px;
+    position: absolute;
+    z-index: 1;
+}
+
+div.imagem-menu{
+    margin: 10px;
+    padding: 10px;;
+    border: 2px solid black;
+    background-color: red;
+    position: absolute;
+    top: -35px;
+    left: -45px;
+}
