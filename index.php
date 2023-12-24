@@ -21,9 +21,9 @@
         </header>
         
         <div class="scroll">
-            <input type="radio" name="grupo" id="rd_home" checked="true">
-            <input type="radio" name="grupo" id="rd_entre">
-            <input type="radio" name="grupo" id="rd_sobre">
+            <input type="radio" name="grupo" id="rd_home" checked="true" hidden>
+            <input type="radio" name="grupo" id="rd_entre"hidden>
+            <input type="radio" name="grupo" id="rd_sobre"hidden>
             
             <section class="sections">
 <!-- ----------------------------------------------------------------------- -->              
@@ -31,7 +31,7 @@
                     <div class="slideshow-container" style=" width: 100vw; height: 100vh; position: relative; margin-bottom: 0; overflow: hidden;">
 
                         <div class="mySlides fade">
-                          <img src="img/slide1.png" style="width:100%">
+                          <img src="img/slide1.jpg" >
                           <div class="text">
                               <h1>Listamento</h1>
                               <p>Monitore seus locais favoritos e acompanhe todas as ocorrências enviadas pelos usuários.</p>
@@ -39,7 +39,7 @@
                         </div>
 
                         <div class="mySlides fade">
-                          <img src="./img/img-art-3.jpg" style="width:100%">
+                          <img src="./img/slide3.jpg" >
                           <div class="text">
                               <h1>Ocorrências</h1>
                               <p>A cada ocorrência compartilhada, várias pessoas podem se precaver para aquela região.</p>
@@ -47,7 +47,7 @@
                         </div>
 
                         <div class="mySlides fade">
-                          <img src="./img/img-art-4.jpg" style="width:100%">
+                          <img src="./img/slide2.jpg" >
                           <div class="text">
                               <h1>Criminalidade</h1>
                               <p>Quanto mais engajamento da população, maiores serão as ações de segurança.</p>

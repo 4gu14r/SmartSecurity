@@ -1,6 +1,6 @@
 @charset "utf-8";
 body{
-    background: #2e2e2e url('../img/roubo-de-celular.png') 50%;
+    background: #2e2e2e url('../img/entrar.jpg') 50%;
     color: whitesmoke;
     padding: 0px;
     margin: auto;
@@ -13,7 +13,7 @@ div{
     margin: 1px 50px;
 }
 div.fundo{
-    background: #2e2e2e url('../img/roubo-de-celular.png') 50%;
+    background: #2e2e2e url('../img/entrar.jpg') 50%;
     margin-top: 0px;
     margin-bottom: 0px;
 }
@@ -129,7 +129,7 @@ div.noticia{
  div.transparente{
     border: 1.5px solid black;
     background-color: rgba(60,60,60,.98);
-    background: #2e2e2e url('../img/roubo-de-celular.png') 50%;
+    background: #2e2e2e url('../img/entrar.jpg') 50%;
     margin: 0px 30px;
     padding: 50px 30px;
 }

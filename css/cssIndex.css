@@ -52,12 +52,12 @@ section#home{
 }
 
 section#entre{
-    background: url(../img/4k.jpg) no-repeat;
+    background: url(../img/entrar.jpg) no-repeat;
     background-size: 100%;
 }
 
 section#sobre{
-    background-image: url(../img/210888.jpg);
+    background-image: url(../img/sobre.jpg);
     background-size: 100%; 
 }
 section#sobre div{
