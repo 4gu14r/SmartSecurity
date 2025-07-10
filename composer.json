@@ -1,0 +1,26 @@
+{
+    "name": "smartsecurity/modern",
+    "description": "Sistema SmartSecurity modernizado com PHP puro",
+    "type": "project",
+    "require": {
+        "php": ">=8.0",
+        "vlucas/phpdotenv": "^5.5",
+        "monolog/monolog": "^3.0",
+        "respect/validation": "^2.2"
+    },
+    "autoload": {
+        "psr-4": {
+            "SmartSecurity\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "SmartSecurity\\Tests\\": "tests/"
+        }
+    },
+    "scripts": {
+        "serve": "php -S localhost -t public",
+        "migrate": "php database/migrate.php"
+    }
+}
+

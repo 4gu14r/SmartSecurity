@@ -1,22 +1,36 @@
 services:
   web:
-    image: php:apache
+    build:
+      context: .
+      dockerfile: Dockerfile
     ports:
       - "80:80"
     volumes:
       - .:/var/www/html
+      - ./public/uploads:/var/www/html/public/uploads
+      - /var/www/html/vendor
+    environment:
+      - APACHE_DOCUMENT_ROOT=/var/www/html/public
+      - APACHE_RUN_USER=www-data
+      - APACHE_RUN_GROUP=www-data
+      - DB_HOST=${DB_HOST}
+      - DB_PORT=${DB_PORT}
+      - DB_NAME=${DB_NAME}
+      - DB_USER=${DB_USER}
+      - DB_PASS=${DB_PASS}
+    depends_on:
+      - banco
 
   banco:
     image: mysql
     ports:
       - "3306:3306"
     environment:
-      MYSQL_ALLOW_EMPTY_PASSWORD: "yes"
-      MYSQL_DATABASE: "smartsecurity"
-      MYSQL_ROOT_PASSWORD: "root"
+      - MYSQL_DATABASE=${DB_NAME}
+      - MYSQL_ROOT_PASSWORD=${DB_PASS}
     volumes:
       - banco_data:/var/lib/mysql
-      - ./sql/smartsecurity.sql:/docker-entrypoint-initdb.d/smartsecurity.sql:ro
+      - ./database/migrations/001_create_updated_schema.sql:/docker-entrypoint-initdb.d/001_create_updated_schema.sql
 
 volumes:
   banco_data:

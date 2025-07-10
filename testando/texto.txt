@@ -1,3 +1,0 @@
-olá, mundo!
-
-Testando o Git
