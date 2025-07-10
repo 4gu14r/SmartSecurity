@@ -1,0 +1,22 @@
+services:
+  web:
+    image: php:apache
+    ports:
+      - "80:80"
+    volumes:
+      - .:/var/www/html
+
+  banco:
+    image: mysql
+    ports:
+      - "3306:3306"
+    environment:
+      MYSQL_ALLOW_EMPTY_PASSWORD: "yes"
+      MYSQL_DATABASE: "smartsecurity"
+      MYSQL_ROOT_PASSWORD: "root"
+    volumes:
+      - banco_data:/var/lib/mysql
+      - ./sql/smartsecurity.sql:/docker-entrypoint-initdb.d/smartsecurity.sql:ro
+
+volumes:
+  banco_data:
