@@ -12,7 +12,7 @@ class Validator
         $this->data = $data;
     }
     
-    public function required(string $field, string $message = null): self
+    public function required(string $field, ?string $message = null): self
     {
         if (!isset($this->data[$field]) || empty(trim($this->data[$field]))) {
             $this->errors[$field][] = $message ?? "O campo {$field} é obrigatório.";
@@ -20,7 +20,7 @@ class Validator
         return $this;
     }
     
-    public function email(string $field, string $message = null): self
+    public function email(string $field, ?string $message = null): self
     {
         if (isset($this->data[$field]) && !filter_var($this->data[$field], FILTER_VALIDATE_EMAIL)) {
             $this->errors[$field][] = $message ?? "O campo {$field} deve ser um email válido.";
@@ -28,7 +28,7 @@ class Validator
         return $this;
     }
     
-    public function min(string $field, int $min, string $message = null): self
+    public function min(string $field, int $min, ?string $message = null): self
     {
         if (isset($this->data[$field]) && strlen($this->data[$field]) < $min) {
             $this->errors[$field][] = $message ?? "O campo {$field} deve ter pelo menos {$min} caracteres.";
@@ -36,7 +36,7 @@ class Validator
         return $this;
     }
     
-    public function max(string $field, int $max, string $message = null): self
+    public function max(string $field, int $max, ?string $message = null): self
     {
         if (isset($this->data[$field]) && strlen($this->data[$field]) > $max) {
             $this->errors[$field][] = $message ?? "O campo {$field} deve ter no máximo {$max} caracteres.";
@@ -44,7 +44,7 @@ class Validator
         return $this;
     }
     
-    public function cpf(string $field, string $message = null): self
+    public function cpf(string $field, ?string $message = null): self
     {
         if (isset($this->data[$field]) && !$this->isValidCpf($this->data[$field])) {
             $this->errors[$field][] = $message ?? "O campo {$field} deve ser um CPF válido.";
@@ -52,7 +52,7 @@ class Validator
         return $this;
     }
     
-    public function date(string $field, string $message = null): self
+    public function date(string $field, ?string $message = null): self
     {
         if (isset($this->data[$field]) && !strtotime($this->data[$field])) {
             $this->errors[$field][] = $message ?? "O campo {$field} deve ser uma data válida.";
@@ -60,7 +60,7 @@ class Validator
         return $this;
     }
     
-    public function numeric(string $field, string $message = null): self
+    public function numeric(string $field, ?string $message = null): self
     {
         if (isset($this->data[$field]) && !is_numeric($this->data[$field])) {
             $this->errors[$field][] = $message ?? "O campo {$field} deve ser numérico.";
@@ -68,7 +68,7 @@ class Validator
         return $this;
     }
     
-    public function in(string $field, array $values, string $message = null): self
+    public function in(string $field, array $values, ?string $message = null): self
     {
         if (isset($this->data[$field]) && !in_array($this->data[$field], $values)) {
             $this->errors[$field][] = $message ?? "O campo {$field} deve ser um dos valores: " . implode(', ', $values);
